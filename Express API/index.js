@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const request = require("request");
 const data = require("./data");
 
 const PORT = 8000;
@@ -72,6 +73,32 @@ app.delete("/humans/:id", (req, res) => {
 		console.log(err);
 		res.status(500).send("There was a problem");
 	}
+});
+
+app.get("/joke", (req, res) => {
+	request("https://sv443.net/jokeapi/category/programming", function(error, response, body) {
+		if (!error && response.statusCode == 200) {
+			res.send(body);
+		} else {
+			res.status(500).send("Things went wrong");
+		}
+	});
+});
+
+app.get("/badjoke", (req, res) => {
+	let final = {};
+	request("https://sv443.net/jokeapi/category/programming", function(error, response, body) {
+		if (!error && response.statusCode == 200) {
+			final = body;
+		} else {
+			console.log(error);
+		}
+	});
+	res.send(final);
+});
+
+app.get("*", (req, res) => {
+	res.status(404).send("Not found");
 });
 
 app.listen(PORT, () => {
