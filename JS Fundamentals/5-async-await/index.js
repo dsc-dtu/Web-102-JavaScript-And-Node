@@ -1,5 +1,5 @@
 // Basic example
-let isWorkDone = true;
+let isWorkDone = false;
 
 const job = new Promise(function(resolve, reject) {
 	if (isWorkDone) {

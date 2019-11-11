@@ -5,6 +5,7 @@ function doSomething(num, oddFunc, evenFunc) {
 	} else {
 		oddFunc(num);
 	}
+	console.log("End");
 }
 
 function odd(x) {

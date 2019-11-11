@@ -80,6 +80,7 @@ app.get("/joke", (req, res) => {
 		if (!error && response.statusCode == 200) {
 			res.send(body);
 		} else {
+			console.log(error);
 			res.status(500).send("Things went wrong");
 		}
 	});
@@ -92,6 +93,7 @@ app.get("/badjoke", (req, res) => {
 			final = body;
 		} else {
 			console.log(error);
+			res.status(500).send("Things went wrong");
 		}
 	});
 	res.send(final);

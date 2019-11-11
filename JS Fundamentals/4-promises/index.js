@@ -27,3 +27,20 @@ function myFunc() {
 }
 
 myFunc();
+
+// Rough Code
+// let data;
+// axios
+// 	.get("google.com")
+// 	.then(function(response) {
+// 		data = response;
+// 		console.log(data);
+// 	})
+// 	.catch(function(error) {
+// 		console.log(error);
+// 	});
+
+// db.get("sbc").then(function(user) {
+// 	user.password == enteredPassword;
+// 	return;
+// });

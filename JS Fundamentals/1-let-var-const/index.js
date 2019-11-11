@@ -12,6 +12,8 @@ z = 100;
 // Scope
 function discountPrices(prices, discount) {
 	var discounted = [];
+	// var i;
+	// var discountedPrice;
 
 	for (var i = 0; i < prices.length; i++) {
 		var discountedPrice = prices[i] * (1 - discount);
